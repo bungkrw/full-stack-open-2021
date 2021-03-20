@@ -1,5 +1,7 @@
 # full-stack-open-2021
 
+[![Logo](images/logo.png)](https://github.com/qingqingqingli/full-stack-open-2021)
+
 [Full Stack Open](https://fullstackopen.com/en/) is an introductary course to modern web development with JavaScript. This repository contains my submission to different exercises.
 
 ## About the course
@@ -8,7 +10,7 @@
 
 - Course has also parts on `TypeScript`, `React Native` and `continuous integration`.
 
-- Other topics include debugging applications, configuration, managing runtime environments and NoSQL databases.
+- Other topics include `debugging` applications, `configuration`, managing `runtime environments` and `NoSQL` databases.
 
 ## Exercises
 
