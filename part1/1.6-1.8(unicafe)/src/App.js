@@ -2,19 +2,22 @@ import React, { useState } from 'react'
 
 const Button = (props) => {
 	return (
-		<div>
-			<button onClick={() => props.function1(props.state1 + 1)}>
-				{props.name1}
+		<>
+			<button onClick={() => props.function(props.state + 1)}>
+				{props.name}
 			</button>
-			<span> </span>
-			<button onClick={() => props.function2(props.state2 + 1)}>
-				{props.name2}
-			</button>
-			<span> </span>
-			<button onClick={() => props.function3(props.state3 + 1)}>
-				{props.name3}
-			</button>
-		</div>
+		</>
+	)
+}
+
+const Statistic = (props) => {
+
+	if (props.text === "positive")
+		return (
+			<div>	{props.text} {props.value} % </div>
+		)
+	return (
+		<div> {props.text} {props.value} </div>
 	)
 }
 
@@ -34,12 +37,12 @@ const Statistics = (props) => {
 
 	return (
 		<div>
-			<div>good {props.good}</div>
-			<div>neutral {props.neutral}</div>
-			<div>bad {props.bad}</div>
-			<div>all {all}</div>
-			<div>average {average}</div>
-			<div>positive {positive} %</div>
+			<Statistic text="good" value={props.good}/>
+			<Statistic text="neutral" value={props.neutral}/>
+			<Statistic text="bad" value={props.bad}/>
+			<Statistic text="all" value={all}/>
+			<Statistic text="average" value={average}/>
+			<Statistic text="positive" value={positive}/>
 		</div>
 	)
 }
@@ -53,14 +56,14 @@ const App = () => {
   return (
     <div>
 			<h1>give feedback</h1>
-			<Button state1={good} function1={setGood} name1={"good"}
-							state2={neutral} function2={setNeutral} name2={"neutral"}
-							state3={bad} function3={setBad} name3={"bad"}	/>
+				<Button state={good} function={setGood} name={"good"}/>	<span> </span>
+				<Button state={neutral} function={setNeutral} name={"neutral"}/> <span> </span>
+				<Button state={bad} function={setBad} name={"bad"}/>
 
 			<h1>statistics</h1>
-			<Statistics good={good} setGood={setGood}
-									neutral={neutral} setNeutral={setNeutral}
-									bad={bad} setBad={setBad} />
+				<Statistics good={good} setGood={setGood}
+										neutral={neutral} setNeutral={setNeutral}
+										bad={bad} setBad={setBad} />
     </div>
   )
 }
